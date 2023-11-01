@@ -1,6 +1,6 @@
 variable "rg_name" {
     type    = string
-    default = "rg-default-dani"
+    default = "rg-default"
 }
 
 variable "location" {

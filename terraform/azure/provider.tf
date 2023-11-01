@@ -14,8 +14,8 @@ terraform {
     # }
   }
   backend "azurerm" {
-    resource_group_name  = "rg-staticsite-vm-dani-tf"
-    storage_account_name = "staticsitedanitf"
+    resource_group_name  = "rg-staticsite-vmdani-tf"
+    storage_account_name = "staticsitedanivmtf"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
   }
