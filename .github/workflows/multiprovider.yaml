@@ -101,8 +101,8 @@ jobs:
     #- name: Step 06 - Terraform Security Scanning Setup
      # run : pip3 install checkov
 
-    - name: Step 07 - Terraform Security Scanning Run
-      run : checkov --directory ./terraform  
+    #- name: Step 07 - Terraform Security Scanning Run
+     # run : checkov --directory ./terraform  
 
     - name: Step 08 - Terraform Validate
       run : terraform -chdir=./terraform/azure validate

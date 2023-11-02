@@ -98,7 +98,7 @@ resource "azurerm_virtual_machine" "vm" {
   computer_name  = "staticsite-vm"
   admin_username = "vmuser"
   ssh_key {
-    key_data = file("C:\\Users\\Yuukitore\\Downloads\\vmazuressh") #Chavepub
+    key_data = file("C:\\Users\\Yuukitore\\Downloads\\vmazuressh") #Chavepub VM
     path     = "/home/vmuser/.ssh/authorized_keys"
     custom_data    = "${base64encode(data.template_file.cloud_init.rendered)}"
   }
