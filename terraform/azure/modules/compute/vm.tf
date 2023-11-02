@@ -87,12 +87,23 @@ resource "azurerm_virtual_machine" "vm" {
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
+  #os_profile {
+   # computer_name  = "staticsite-vm"
+    #admin_username = "vmuser"
+    #admin_password = "Password1234!"
+    #custom_data    = "${base64encode(data.template_file.cloud_init.rendered)}"
+  #}
+
   os_profile {
-    computer_name  = "staticsite-vm"
-    admin_username = "vmuser"
-    admin_password = "Password1234!"
+  computer_name  = "staticsite-vm"
+  admin_username = "vmuser"
+  ssh_key {
+    key_data = file("C:\Users\Yuukitore\Downloads\vmazuressh") 
+    path     = "/home/vmuser/.ssh/authorized_keys"
     custom_data    = "${base64encode(data.template_file.cloud_init.rendered)}"
   }
+}
+
   os_profile_linux_config {
     disable_password_authentication = false
   }
